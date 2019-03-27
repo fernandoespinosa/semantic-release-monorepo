@@ -127,14 +127,18 @@ sudo apt-get update && sudo apt-get install yarn
 
 ---
 
-## 7 - Run 
+## 7 - Run `semantic-release-cli setup`
 
 ```
-lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo
+semantic-release-cli setup
 ```
 
-### Alternative to semantic-release-cli
+- Add tokens to ENV variables
+
+## 8 - Add `semantic-release-monorepo` manually (not done with semantic-release-cli)
 
 ```
-yarn add -D semantic-release semantic-release-monorepo
+yarn add -D semantic-release-monorepo
 ```
+
+## 9 - Run semantic-release via lerna
