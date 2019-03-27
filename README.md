@@ -129,6 +129,9 @@ sudo apt-get update && sudo apt-get install yarn
 
 ## 7 - Run 
 
+```
+lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo
+```
 
 ### Alternative to semantic-release-cli
 
