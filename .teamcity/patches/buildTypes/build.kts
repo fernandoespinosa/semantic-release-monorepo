@@ -16,7 +16,7 @@ changeBuildType(RelativeId("build")) {
         insert(0) {
             script {
                 scriptContent = """
-                    yarn install
+                    lerna bootstrap
                     lerna run build
                 """.trimIndent()
             }
