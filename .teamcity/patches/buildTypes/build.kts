@@ -15,7 +15,10 @@ changeBuildType(RelativeId("build")) {
     steps {
         insert(0) {
             script {
-                scriptContent = "lerna run build"
+                scriptContent = """
+                    yarn install
+                    lerna run build
+                """.trimIndent()
             }
         }
     }
