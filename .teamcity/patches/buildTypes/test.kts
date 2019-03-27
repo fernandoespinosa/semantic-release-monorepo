@@ -20,7 +20,10 @@ create(DslContext.projectId, BuildType({
 
     steps {
         script {
-            scriptContent = "lerna run jest"
+            scriptContent = """
+                yarn install
+                lerna run jest
+            """.trimIndent()
         }
     }
 }))
