@@ -10,6 +10,11 @@ To apply the patch, change the buildType with id = 'build'
 accordingly, and delete the patch script.
 */
 changeBuildType(RelativeId("build")) {
+    check(artifactRules == "") {
+        "Unexpected option value: artifactRules = $artifactRules"
+    }
+    artifactRules = "packages/my-react-app/build => my-react-app.zip"
+
     expectSteps {
     }
     steps {
