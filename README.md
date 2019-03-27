@@ -1,6 +1,6 @@
 # semantic-release-monorepo
 
-## 1
+## 1 - Install `lerna` and `create-react-app` globally (and `semantic-release-cli` but not used)
 
 ```
 ➜  semantic-release-monorepo git:(master) ✗ yarn global add semantic-release-cli
@@ -38,7 +38,7 @@ success Installed "create-react-app@2.1.8" with binaries:
 
 ---
 
-## 2
+## 2 - Initialize monorepo with Lerna
 
 ```
 ➜  semantic-release-monorepo git:(master) ✗ lerna init
@@ -51,7 +51,7 @@ lerna success Initialized Lerna files
 
 ---
 
-## 3
+## 3 - Install devDependencies for storybook
 
 ```
 yarn add -D react react-dom @babel/core@^7.0.0-0 @babel/cli babel-plugin-transform-es2015-modules-commonjs babel-jest enzyme enzyme-adapter-react-16 jest react-test-renderer babel-core@7.0.0-bridge.0 @babel/preset-env @babel/preset-react
@@ -59,7 +59,7 @@ yarn add -D react react-dom @babel/core@^7.0.0-0 @babel/cli babel-plugin-transfo
 
 ---
 
-## 4
+## 4 - Generate storybook
 
 ```
 ➜  semantic-release-monorepo git:(master) npx -p @storybook/cli sb init
@@ -104,12 +104,9 @@ For more information visit: https://storybook.js.org
 
 ---
 
-## 5
+## 5 - Configure the build agent container instance
 
-```
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-```
+### Install Node.js
 
 ```
 curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
@@ -117,6 +114,27 @@ curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
 sudo apt-get update && sudo apt-get install nodejs
 ```
 
+### Install Yarn
+
+```
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+```
+
 ```
 sudo apt-get update && sudo apt-get install yarn
+```
+
+---
+
+## 7 - Run 
+
+```
+lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo
+```
+
+### Alternative to semantic-release-cli
+
+```
+yarn add -D semantic-release semantic-release-monorepo
 ```

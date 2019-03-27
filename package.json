@@ -6,8 +6,13 @@
     "@babel/core": "^7.0.0-0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.0.5",
+    "@storybook/addon-links": "^5.0.5",
+    "@storybook/addons": "^5.0.5",
+    "@storybook/react": "^5.0.5",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^24.5.0",
+    "babel-loader": "^8.0.5",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
@@ -16,15 +21,18 @@
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-test-renderer": "^16.8.5",
-    "@storybook/react": "^5.0.5",
-    "@storybook/addon-actions": "^5.0.5",
-    "@storybook/addon-links": "^5.0.5",
-    "@storybook/addons": "^5.0.5",
-    "babel-loader": "^8.0.5"
+    "semantic-release": "^15.13.3",
+    "semantic-release-monorepo": "^6.1.1"
   },
   "dependencies": {},
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "semantic-release": "semantic-release"
+  },
+  "version": "0.0.0-development",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fernandoespinosa/semantic-release-monorepo.git"
   }
 }
