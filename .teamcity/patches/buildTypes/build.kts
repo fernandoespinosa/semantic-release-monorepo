@@ -10,6 +10,11 @@ To apply the patch, change the buildType with id = 'build'
 accordingly, and delete the patch script.
 */
 changeBuildType(RelativeId("build")) {
+    check(name == "build") {
+        "Unexpected name: '$name'"
+    }
+    name = "Build"
+
     check(artifactRules == "") {
         "Unexpected option value: artifactRules = $artifactRules"
     }
